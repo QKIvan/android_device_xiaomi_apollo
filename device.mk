@@ -160,7 +160,7 @@ PRODUCT_PACKAGES += \
 
 # Display
 PRODUCT_VENDOR_PROPERTIES += \
-    persist.sys.sf.native_mode=257 \
+    persist.sys.sf.native_mode=258 \
     ro.vendor.display.paneltype=2 \
     ro.vendor.display.sensortype=2 \
     vendor.display.qdcm.mode_combine=1 \

@@ -632,5 +632,9 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
             <name>IQspmhal</name>
             <instance>default</instance>
         </interface>
+    <hal format="hidl">
+        <name>vendor.xiaomi.hardware.displayfeature</name>
+        <transport>hwbinder</transport>
+        <fqname>@1.0::IDisplayFeature/default</fqname>
     </hal>
 </manifest>

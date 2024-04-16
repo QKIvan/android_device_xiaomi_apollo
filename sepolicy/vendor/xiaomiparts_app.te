@@ -2,3 +2,10 @@ allow xiaomiparts_app {
     sysfs_thermal
     vendor_sysfs_kgsl
 }:{ file lnk_file } rw_file_perms;
+
+# DisplayFeature
+hal_client_domain(xiaomiparts_app, vendor_hal_displayfeature_xiaomi)
+binder_call(xiaomiparts_app, vendor_hal_displayfeature_xiaomi)
+allow xiaomiparts_app {
+  vendor_hal_displayfeature_xiaomi_hwservice
+}:hwservice_manager find;

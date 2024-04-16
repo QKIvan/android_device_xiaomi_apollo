@@ -25,6 +25,7 @@ import android.util.Log;
 
 import co.aospa.xiaomiparts.thermal.ThermalUtils;
 import co.aospa.xiaomiparts.refreshrate.RefreshUtils;
+import co.aospa.xiaomiparts.display.ColorService;
 
 public class BootCompletedReceiver extends BroadcastReceiver {
 
@@ -40,6 +41,7 @@ public class BootCompletedReceiver extends BroadcastReceiver {
         Log.i(TAG, "Boot completed, starting services");
         ThermalUtils.startService(context);
         RefreshUtils.startService(context);
+        ColorService.startService(context);
     }
 
 }

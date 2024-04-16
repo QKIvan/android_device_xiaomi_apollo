@@ -692,6 +692,17 @@ vendor/lib64/vendor.display.color@1.4.so
 vendor/lib64/vendor.display.color@1.5.so
 vendor/lib64/vendor.display.postproc@1.0.so
 
+# Display Feature
+vendor/bin/hw/vendor.xiaomi.hardware.displayfeature@1.0-service
+vendor/etc/init/vendor.xiaomi.hardware.displayfeature@1.0-service.rc
+vendor/lib64/hw/displayfeature.default.so
+vendor/lib64/hw/vendor.xiaomi.hardware.displayfeature@1.0-impl.so
+vendor/bin/displayfeature
+vendor/lib64/vendor.xiaomi.hardware.displayfeature@1.0.so
+vendor/lib64/libclient2slpi.notifier.so
+vendor/lib64/libdisplayfeature.so
+vendor/lib64/libdisplayfeatureservice.so
+
 # Display calibration data - MIUI
 vendor/etc/qdcm_calib_data_xiaomi_37_02_0a_video_mode_dsc_dsi_panel.xml|19f66d16c981e3a70bd1566debd472cefd55976e
 vendor/etc/ltm_config_xiaomi_37_02_0a_video_mode_dsc_dsi_panel.xml|7f49418046704bb95521e2f97a466093af2f85e8

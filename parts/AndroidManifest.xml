@@ -22,6 +22,11 @@
             </intent-filter>
         </receiver>
 
+        <service
+            android:name=".display.ColorService"
+            android:permission="ColorService">
+        </service>
+
         <activity
             android:name=".thermal.ThermalSettingsActivity"
             android:label="@string/thermal_title"
