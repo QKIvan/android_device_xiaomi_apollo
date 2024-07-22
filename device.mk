@@ -213,6 +213,7 @@ PRODUCT_PACKAGES += \
 TARGET_SUPPORTS_OMX_SERVICE := false
 
 PRODUCT_VENDOR_PROPERTIES += \
+    debug.stagefright.c2inputsurface=-1 \
     vendor.media.omx=0
 
 # Keymaster
