@@ -25,6 +25,14 @@ if [ ! -f "${HELPER}" ]; then
 fi
 source "${HELPER}"
 
+function blob_fixup() {
+    case "${1}" in
+        vendor/etc/seccomp_policy/atfwd@2.0.policy)
+            [ "$2" = "" ] && return 0
+            echo 'gettid: 1' >> "${2}"
+            ;;
+    esac
+}
 # Default to sanitizing the vendor folder before extraction.
 CLEAN_VENDOR=true
 
