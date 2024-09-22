@@ -107,16 +107,6 @@ vendor/etc/acdbdata/adsp_avs_config.acdb|583081e046b593634feb104a0e99c28c053438c
 vendor/lib/hw/audio.primary.kona.so|ea3fa38521d5a066b981c2e47ac76eedb94838e2
 vendor/lib/hw/sound_trigger.primary.kona.so|1c5f738f05c89ac53d637781c089c1aaad525dbb
 vendor/lib/hw/vendor.qti.hardware.audiohalext@1.0-impl.so|ee89b7cb4e0476688ac8c1a669dfe89c660b1a76
-vendor/lib/libOmxAacDec.so|50df60f025bced312a8369d79fc196d059d59555
-vendor/lib/libOmxAlacDec.so|851df810b20f63d166cc919b83bd01e1cd57d3f1
-vendor/lib/libOmxAmrDec.so|7c2a33a84bfc8c5048b33efe5984ede05ae4c531
-vendor/lib/libOmxAmrwbplusDec.so|b02524f30936489d6814f6ab97a9fbf9f71dc2b9
-vendor/lib/libOmxApeDec.so|b35b28aebef692f6b1e4645410b2e2984b84e7f3
-vendor/lib/libOmxDsdDec.so|f74936badeb8303b2bb17475b9cd157b1c81131c
-vendor/lib/libOmxEvrcDec.so|827e34f3068a733c39772d46f3757e42e21975c9
-vendor/lib/libOmxG711Dec.so|30c7455e4dab3ef2277df64f9ebd77a2d8fe433e
-vendor/lib/libOmxQcelp13Dec.so|44698fe731f52e64f4646c6262c9b4adba3d807b
-vendor/lib/libOmxWmaDec.so|c83b4f6b778eee08bfbbda3235720cb5c65baece
 vendor/lib/liba2dpoffload.so|216d9905e64182287cc2428b5b3556c691236cd7
 vendor/lib/libacdb-fts.so|58ba780af5c7ef1db1746ec662558073ea9e89fa
 vendor/lib/libacdbloader.so|e8be0831b451d59b3d5bf3d50a031602f3586369
@@ -155,15 +145,6 @@ vendor/lib/vndk/libxlog.so|dad5169deb3296ca1ff4d7e9546e4229cda277b9
 vendor/lib64/hw/audio.primary.kona.so|d8f976e8ff7897b06c97a4ad399191d8278f4924
 vendor/lib64/hw/sound_trigger.primary.kona.so|f1d5fd546d457f4cf7461e90885712417846343a
 vendor/lib64/hw/vendor.qti.hardware.audiohalext@1.0-impl.so|0f59ee3a875a9b01610d324bc95a1bc61f51edc0
-vendor/lib64/libOmxAacDec.so|30929dc8230d4aeaa1ddf8b6f906edc552b20454
-vendor/lib64/libOmxAlacDec.so|e69f230895eb7fe90f0f88973a2381c6b53544e4
-vendor/lib64/libOmxAmrDec.so|e04b2c5df074d01bfad9074a74bae364a896fd16
-vendor/lib64/libOmxAmrwbplusDec.so|16d2eca5bc54071fcef67c277c83f8ef073636f2
-vendor/lib64/libOmxApeDec.so|1d34eed58efd389ec3d86370bc16270bd38a1436
-vendor/lib64/libOmxEvrcDec.so|a793c523f124535ae7591fe76ca6f2eba3f38d8f
-vendor/lib64/libOmxG711Dec.so|65d6ff16754987155a8d03c114c0a1bd952d3709
-vendor/lib64/libOmxQcelp13Dec.so|d3d11987b8dc3c6605ed79b7f34537a325dfbf79
-vendor/lib64/libOmxWmaDec.so|dabd308bd5a01c1eb9a9a4151ebf75628483d773
 
 # Audio FX - MIUI
 vendor/lib/soundfx/libasphere.so|b2daeb875914a33575c7d7a67429f25d09d35489
