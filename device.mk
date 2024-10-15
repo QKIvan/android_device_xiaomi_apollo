@@ -123,6 +123,11 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.camera.postproc@1.0.vendor \
     libpiex_shim
 
+# Cgroup and task_profiles
+PRODUCT_COPY_FILES += \
+    system/core/libprocessgroup/profiles/cgroups.json:$(TARGET_COPY_OUT_VENDOR)/etc/cgroups.json \
+    system/core/libprocessgroup/profiles/task_profiles.json:$(TARGET_COPY_OUT_VENDOR)/etc/task_profiles.json
+
 # Charging
 PRODUCT_VENDOR_PROPERTIES += \
     persist.vendor.cp.fcc_main_ua=400000 \
