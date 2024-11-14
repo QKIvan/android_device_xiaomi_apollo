@@ -13,7 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.lineageos.settings.refreshrate;
+
+package co.aospa.xiaomiparts.thermal;
 
 import android.annotation.Nullable;
 import android.content.Context;
@@ -42,7 +43,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.android.settingslib.applications.ApplicationsState;
 
-import org.lineageos.settings.R;
+import co.aospa.xiaomiparts.R;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -50,17 +51,16 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class RefreshSettingsFragment extends PreferenceFragment
-    implements ApplicationsState.Callbacks {
+public class ThermalSettingsFragment extends PreferenceFragment
+        implements ApplicationsState.Callbacks {
 
     private AllPackagesAdapter mAllPackagesAdapter;
     private ApplicationsState mApplicationsState;
     private ApplicationsState.Session mSession;
     private ActivityFilter mActivityFilter;
-    private Map<String, ApplicationsState.AppEntry> mEntryMap =
-            new HashMap<String, ApplicationsState.AppEntry>();
+    private Map<String, ApplicationsState.AppEntry> mEntryMap = new HashMap<String, ApplicationsState.AppEntry>();
 
-    private RefreshUtils mRefreshUtils;
+    private ThermalUtils mThermalUtils;
     private RecyclerView mAppsRecyclerView;
 
     @Override
@@ -78,20 +78,19 @@ public class RefreshSettingsFragment extends PreferenceFragment
 
         mAllPackagesAdapter = new AllPackagesAdapter(getActivity());
 
-        mRefreshUtils = new RefreshUtils(getActivity());
+        mThermalUtils = new ThermalUtils(getActivity());
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-            Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.refresh_layout, container, false);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        return inflater.inflate(R.layout.thermal_layout, container, false);
     }
 
     @Override
     public void onViewCreated(final View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        mAppsRecyclerView = view.findViewById(R.id.refresh_rv_view);
+        mAppsRecyclerView = view.findViewById(R.id.thermal_rv_view);
         mAppsRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         mAppsRecyclerView.setAdapter(mAllPackagesAdapter);
     }
@@ -100,7 +99,7 @@ public class RefreshSettingsFragment extends PreferenceFragment
     @Override
     public void onResume() {
         super.onResume();
-        getActivity().setTitle(getResources().getString(R.string.refresh_title));
+        getActivity().setTitle(getResources().getString(R.string.thermal_title));
         rebuild();
     }
 
@@ -194,13 +193,25 @@ public class RefreshSettingsFragment extends PreferenceFragment
 
     private int getStateDrawable(int state) {
         switch (state) {
-            case RefreshUtils.STATE_STANDARD:
-                return R.drawable.ic_refresh_60;
-            case RefreshUtils.STATE_EXTREME:
-                return R.drawable.ic_refresh_120;
-            case RefreshUtils.STATE_DEFAULT:
+            case ThermalUtils.STATE_BENCHMARK:
+                return R.drawable.ic_thermal_benchmark;
+            case ThermalUtils.STATE_BROWSER:
+                return R.drawable.ic_thermal_browser;
+            case ThermalUtils.STATE_CAMERA:
+                return R.drawable.ic_thermal_camera;
+            case ThermalUtils.STATE_DIALER:
+                return R.drawable.ic_thermal_dialer;
+            case ThermalUtils.STATE_GAMING:
+                return R.drawable.ic_thermal_gaming;
+            case ThermalUtils.STATE_NAVIGATION:
+                return R.drawable.ic_thermal_navigation;
+            case ThermalUtils.STATE_STREAMING:
+                return R.drawable.ic_thermal_streaming;
+            case ThermalUtils.STATE_VIDEO:
+                return R.drawable.ic_thermal_video;
+            case ThermalUtils.STATE_DEFAULT:
             default:
-                return R.drawable.ic_refresh_default;
+                return R.drawable.ic_thermal_default;
         }
     }
 
@@ -223,13 +234,19 @@ public class RefreshSettingsFragment extends PreferenceFragment
         }
     }
 
-     private class ModeAdapter extends BaseAdapter {
+    private class ModeAdapter extends BaseAdapter {
 
         private final LayoutInflater inflater;
         private final int[] items = {
-                R.string.refresh_default,
-                R.string.refresh_standard,
-                R.string.refresh_extreme
+                R.string.thermal_default,
+                R.string.thermal_benchmark,
+                R.string.thermal_browser,
+                R.string.thermal_camera,
+                R.string.thermal_dialer,
+                R.string.thermal_gaming,
+                R.string.thermal_navigation,
+                R.string.thermal_streaming,
+                R.string.thermal_video
         };
 
         private ModeAdapter(Context context) {
@@ -263,12 +280,11 @@ public class RefreshSettingsFragment extends PreferenceFragment
 
             view.setText(items[position]);
             view.setTextSize(14f);
-
             return view;
         }
     }
 
-        private class AllPackagesAdapter extends RecyclerView.Adapter<ViewHolder>
+    private class AllPackagesAdapter extends RecyclerView.Adapter<ViewHolder>
             implements AdapterView.OnItemSelectedListener, SectionIndexer {
 
         private List<ApplicationsState.AppEntry> mEntries = new ArrayList<>();
@@ -288,29 +304,32 @@ public class RefreshSettingsFragment extends PreferenceFragment
         public long getItemId(int position) {
             return mEntries.get(position).id;
         }
-@NonNull
+
+        @NonNull
         @Override
-         public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
             return new ViewHolder(LayoutInflater.from(parent.getContext())
-                    .inflate(R.layout.refresh_list_item, parent, false));
+                    .inflate(R.layout.thermal_list_item, parent, false));
         }
 
- 	@Override
+        @Override
         public void onBindViewHolder(ViewHolder holder, int position) {
             Context context = holder.itemView.getContext();
-
             ApplicationsState.AppEntry entry = mEntries.get(position);
-
             if (entry == null) {
                 return;
             }
+
             holder.mode.setAdapter(new ModeAdapter(context));
             holder.mode.setOnItemSelectedListener(this);
+
             holder.title.setText(entry.label);
             holder.title.setOnClickListener(v -> holder.mode.performClick());
+
             mApplicationsState.ensureIcon(entry);
             holder.icon.setImageDrawable(entry.icon);
-            int packageState = mRefreshUtils.getStateForPackage(entry.info.packageName);
+
+            int packageState = mThermalUtils.getStateForPackage(entry.info.packageName);
             holder.mode.setSelection(packageState, false);
             holder.mode.setTag(entry);
             holder.stateIcon.setImageResource(getStateDrawable(packageState));
@@ -331,12 +350,11 @@ public class RefreshSettingsFragment extends PreferenceFragment
         @Override
         public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
             final ApplicationsState.AppEntry entry = (ApplicationsState.AppEntry) parent.getTag();
-            
-            int currentState = mRefreshUtils.getStateForPackage(entry.info.packageName);
+            int currentState = mThermalUtils.getStateForPackage(entry.info.packageName);
             if (currentState != position) {
-                mRefreshUtils.writePackage(entry.info.packageName, position);
+                mThermalUtils.writePackage(entry.info.packageName, position);
                 notifyDataSetChanged();
-            }  
+            }
         }
 
         @Override

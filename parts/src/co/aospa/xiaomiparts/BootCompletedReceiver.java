@@ -14,33 +14,30 @@
  * limitations under the License.
  */
 
-package org.lineageos.settings;
+package co.aospa.xiaomiparts;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 
-import org.lineageos.settings.dirac.DiracUtils;
-import org.lineageos.settings.thermal.ThermalUtils;
-import org.lineageos.settings.refreshrate.RefreshUtils;
+import android.util.Log;
+
+import co.aospa.xiaomiparts.thermal.ThermalUtils;
 
 public class BootCompletedReceiver extends BroadcastReceiver {
 
+    private static final String TAG = "XiaomiParts-BCR";
+
     @Override
     public void onReceive(final Context context, Intent intent) {
-        if (!intent.getAction().equals(Intent.ACTION_BOOT_COMPLETED)) {
+        Log.d(TAG, "Received intent: " + intent.getAction());
+        if (!intent.getAction().equals(Intent.ACTION_LOCKED_BOOT_COMPLETED)) {
             return;
         }
 
-        // Dirac
-        DiracUtils.onBootCompleted(context);
-
-        // Thermal Profiles
+        Log.i(TAG, "Boot completed, starting services");
         ThermalUtils.startService(context);
-
-        // Per app refresh rate
-        RefreshUtils.startService(context);
-
     }
+
 }

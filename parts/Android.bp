@@ -16,10 +16,6 @@ android_app {
     privileged: true,
 
     static_libs: [
-        "co.aospa.resources",
-    ],
-
-    optimize: {
-        proguard_flags_files: ["proguard.flags"],
-    },
+        "co.aospa.resources"
+    ]
 }
