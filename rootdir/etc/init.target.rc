@@ -109,7 +109,6 @@ on boot && property:persist.vendor.usb.controller.default=*
 on charger
     start vendor.power_off_alarm
     setprop sys.usb.controller a600000.dwc3
-    setprop sys.usb.configfs 1
 
 service vendor.lowi /vendor/bin/sscrpcd
    class core
