@@ -100,3 +100,6 @@
 # Xiaomi thermal daemon
 /vendor/bin/mi_thermald                                     u:object_r:mi_thermald_exec:s0
 /data/vendor/thermal(/.*)?                                  u:object_r:vendor_thermal_data_file:s0
+
+# NFC
+/vendor/bin/hw/android.hardware\.nfc-service\.nxp                       u:object_r:hal_nfc_default_exec:s0

@@ -971,8 +971,16 @@ vendor/lib64/vendor.qti.hardware.factory@1.1.so
 vendor/lib/libmmosal.so
 vendor/lib64/libmmosal.so
 
+# Secure element
+vendor/bin/hw/vendor.qti.secure_element@1.2-service
+vendor/etc/init/vendor.qti.secure_element@1.2-service.rc
+vendor/lib64/android.hardware.secure_element@1.0-impl.so
+vendor/lib64/jcos_nq_client.so
+vendor/lib64/ls_nq_client.so
+vendor/lib64/se_nq_extn_client.so
+
 # NFC - MIUI
-vendor/etc/libnfc-nci.conf|0e62f3156ee8e470eb654fd42cfd4368f422681a
+vendor/etc/libnfc-nci.conf|87b4691a4f0ca97a07bc3e7db169fc2509519c7a
 vendor/etc/libnfc-nxp-pnscr.conf|c9bbf87032cf73dc0b76793a15eff838f11ebf84
 vendor/etc/libnfc-nxp.conf|1feed2d0733cf140fd9d645bc6f24082e5f5471f
 vendor/etc/libnfc-nxp_RF.conf|41fba73d395eec2988a79f2448c46b1748d194c4
