@@ -63,6 +63,14 @@ void set_device_props(const string brand, const string marketname,
     }
 }
 
+void load_miuicamera_properties() {
+    property_override("ro.product.mod_device", "apollo_global");
+    property_override("vendor.camera.aux.packagelist", "com.android.camera");
+    property_override("persist.vendor.camera.privapp.list", "com.android.camera");
+    property_override("ro.com.google.lens.oem_camera_package", "com.android.camera");
+    property_override("ro.miui.notch", "1");
+}
+
 void vendor_load_properties()
 {
     /*
@@ -86,4 +94,5 @@ void vendor_load_properties()
             property_override("ro.build.description", "apollo_global-user 12 RKQ1.211001.001 V14.0.4.0.SJDMIXM release-keys");
         }
     }
+    load_miuicamera_properties();
 }
