@@ -331,6 +331,11 @@ vendor/lib64/libvideofilter_only.so|a79f90fd9b3105744790412b72f314f804707fbe
 vendor/lib64/libvidhance.so|769fe96e1e282e22abb658190755fa1acbacf2ec
 vendor/lib64/libxmi_hdr_checker.so|c2b5a4df52e98a29aa36a56d08d40b630cbcbda0
 vendor/lib64/libxmi_high_dynamic_range.so|6e2b39fe8af991e13b2095d4f825b888fbc71691
+vendor/lib64/vendor.xiaomi.hardware.campostproc@1.0.so|dac8f1c49fcb707d263a07df6d63065db159f332
+vendor/lib64/libflaw.so|565c09d61dde8e1854822472221b9c0f28fc8699
+vendor/lib64/libcom.xiaomi.pluginutils.so|b302be1c8506c2246363006e208bc49978b3a684
+vendor/lib64/libcom.xiaomi.metadatautils.so|40e96645a69121d9e2a5922ec532435c0e4134df
+vendor/lib64/libbeauty_face_interface.so|1cbbd00f365e596b8cf5c630f9f56193242b6591
 
 # Camera (postproc) - from LA.UM.9.14.r1-18400.02-LAHAINA.QSSI12.0
 vendor/lib64/vendor.qti.hardware.camera.postproc@1.0-service-impl.so|afeca01f1fc2619ddf1aada01d42735ab9efa682
@@ -390,7 +395,7 @@ vendor/lib64/camera/components/com.mi.node.rearvideo.so|e42bb013bbb2e1fe91fb67a4
 vendor/lib64/camera/components/com.mi.node.skinbeautifier.so|13cd1b12e247b3a640d8833ae9df778e89552e7e
 vendor/lib64/camera/components/com.mi.node.superlowlightraw.so|65e71a491bffb101ccc1127513ba16e7616fd028
 vendor/lib64/camera/components/com.mi.node.videobokeh.so|9e0fad51c29567cc3cbd381803ee2e895bcf18a8
-vendor/lib64/camera/components/com.mi.node.watermark.so|c990eb9b96dfed5af69d8b93abbb4f5c60c4b2f3
+vendor/lib64/camera/components/com.mi.node.watermark.so|3d4d5f9068c9b61d619ea7fa87f62e3ed37ed070
 vendor/lib64/camera/components/com.qti.camx.chiiqutils.so|18624021b8609f72c1a4914a6be5cc3c1a69a34d
 vendor/lib64/camera/components/com.qti.eisv2.so|922283630dbb9cc40530b802941a3fbb27b49166
 vendor/lib64/camera/components/com.qti.eisv3.so|f0a0b0eb5f54f7eaaa38ab6f8aa2ce7cc3b42b94
@@ -485,7 +490,7 @@ vendor/etc/camera/almalence_sr_params_wide.config|34839f1bbf978646a614d400d69107
 vendor/etc/camera/almalence_sr_params_wide_64M.config|a20c2b3cd0b3148a4115eb9a957e6e171bb91c54
 vendor/etc/camera/beauty_ui9_intelligent_params.config|a9cf088efb6f656ae369a53e96808ef673e27c67
 vendor/etc/camera/bokehParams.json|874bdc989c6e3d4e489d714f3ea971eddc32d000
-vendor/etc/camera/camxoverridesettings.txt|43970c33f997463feb2a054a01a501decba01ee9
+vendor/etc/camera/camxoverridesettings.txt|90413cd103da5d292511c2f386a33ab68b06bfec
 vendor/etc/camera/com.xiaomi.dcal.wu.fake|97aa104f1a936d098dc75a8425cf36716217cbd3
 vendor/etc/camera/com.xiaomi.dcal.wu.golden|892e90d66a41037f7b390e0ea6976c85b4141694
 vendor/etc/camera/com.xiaomi.dcal.wu.golden2|66e7be9464b31786a7b1390f587ca37155bb1e02
@@ -503,7 +508,7 @@ vendor/etc/camera/model_back.dlc|10dfcadfbb7024680d14224a402927a958718d1a
 vendor/etc/camera/model_front.dlc|f9bf3082ae5b7836b320555719df9edbe45b25b0
 vendor/etc/camera/model_front_mibokeh_video.dlc|ebf32a74cd1608f900b713edc5b0e9b421b7b19e
 vendor/etc/camera/reid_float.dlc|f78285e63f1c8c460ac27c475d3f16d2e75f172b
-vendor/etc/camera/sceneDetection.xml|39b8f86bb9d6598ed9233755e13dacaafc2ff75d
+vendor/etc/camera/sceneDetection.xml|d2a0189b3ba6eace322442377cbef6c16c13427f
 vendor/etc/camera/seg_quantized.dlc|1c982e1875c29994792ae95031fab93af3661dd8
 vendor/etc/camera/vidhance_calibration|be41cd8f849671e99b0b21c0c786fbc97ad5305a
 

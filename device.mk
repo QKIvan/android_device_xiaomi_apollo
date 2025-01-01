@@ -114,7 +114,8 @@ PRODUCT_PACKAGES += \
     libcamera2ndk_vendor \
     libstdc++.vendor \
     vendor.qti.hardware.camera.device@1.0.vendor \
-    vendor.qti.hardware.camera.postproc@1.0.vendor
+    vendor.qti.hardware.camera.postproc@1.0.vendor \
+    libpiex_shim
 
 # Charging
 PRODUCT_VENDOR_PROPERTIES += \
