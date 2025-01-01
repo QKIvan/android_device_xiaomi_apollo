@@ -138,6 +138,13 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.ir-service.xiaomi
 
+# DeviceAsWebcam
+PRODUCT_PACKAGES += \
+    DeviceAsWebcam
+
+PRODUCT_VENDOR_PROPERTIES += \
+    ro.usb.uvc.enabled=true
+
 # Dalvik
 $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 
@@ -290,7 +297,8 @@ PRODUCT_PACKAGES += \
     ApolloSettings \
     ApolloSystemUI \
     AOSPAApolloFrameworks \
-    AOSPAApolloSystemUI
+    AOSPAApolloSystemUI \
+    ApolloDeviceAsWebcamRes
 
 # Protobuf
 PRODUCT_PACKAGES += \
